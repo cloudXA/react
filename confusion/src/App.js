@@ -7,7 +7,7 @@ class App extends Component {
     
 
   render() {
-    console.log("aloading2");
+   
     return (   
       <div className="App">   
           <Main /> 

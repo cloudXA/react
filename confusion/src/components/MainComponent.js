@@ -9,27 +9,22 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
-    console.log('following is main inside');
-    console.log(props);
+  
     this.state = {
       dishes: DISHES,
       selectedDish: null
 
     };
-    console.log("following this.state.dishes");
-    console.log(this.state.dishes);
-    console.log("onclick following this.state.selectedDish");
-    console.log(this.state.selectedDish);
+  
   }
 
   onDishSelect(dishId) {
       this.setState({ selectedDish: dishId});
-      console.log("clicked follwing inside")
-      console.log(dishId);
+     
   }
 
   render() {
-      console.log("mainloading2");
+      
     return (
       
       <div>
