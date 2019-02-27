@@ -24,6 +24,8 @@ import { Card, CardImg, CardImgOverlay,CardTitle } from 'reactstrap';
             );
         });
     
+
+         
         return (
             <div className="container">
                 <div className="row">                    
@@ -33,8 +35,6 @@ import { Card, CardImg, CardImgOverlay,CardTitle } from 'reactstrap';
             </div>
         );
     }
-    
-export default Menu;         
-        
 
 
+export default Menu;
