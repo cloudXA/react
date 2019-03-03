@@ -4,7 +4,7 @@ import Menu from './MenuComponent';
 import Contact from './ContactComponent';
 import DishDetail from './DishdetailComponent';
 import Footer from './FooterComponent';
-
+import About from './AboutComponent';
 import { DISHES } from '../shared/dishes';
 import {COMMENTS} from '../shared/comments';
 import {PROMOTIONS} from '../shared/promotions';
@@ -16,13 +16,14 @@ class Main extends Component {
 
   constructor(props) {
     super(props);
+    console.log("in main"+props);
   
     this.state = {
       dishes: DISHES,
       comments: COMMENTS,
       promotions: PROMOTIONS,
       leaders: LEADERS
-   
+      
     };
   
   }
@@ -40,6 +41,12 @@ class Main extends Component {
         />
       );
     }
+    const RenderLeader = () => {
+      return (
+        <About leader={this.state.leaders}/>
+      );
+    }
+
      const DishWithId = ({match}) => {
       return (
             <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
@@ -58,6 +65,7 @@ class Main extends Component {
           <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} />} />
           <Route path="/menu/:dishId" component={DishWithId} />
           <Route exact path="/contactus" component={Contact} />
+          <Route exact path="/aboutus" component={() => <About leaders={this.state.leaders} />} />
           <Redirect to="/home" />
         </Switch>
 
